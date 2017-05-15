@@ -19,6 +19,7 @@ class NewsPanel extends React.Component {
     }
 
     loadMoreNews() {
+        /*
         function randomString() {
             const charSet = '                  abcdefghijklmnopqrstuvwxyz0123456789';
             let len = Math.floor(Math.random() * (300 - 20 + 1)) + 20;
@@ -34,7 +35,7 @@ class NewsPanel extends React.Component {
         for (let i = 0; i < 15; i++) {
             this.state.news_list.push({title:"Card Title", description: randomString()});
         }
-        /*
+        */
         let request = new Request('http://localhost:3000/news', {
             method: 'GET',
             cache: false
@@ -44,10 +45,9 @@ class NewsPanel extends React.Component {
             .then(res => res.json())
             .then((news) => {
                 this.setState({
-                    news: this.state.news ? this.state.news.concat(news) : news
+                    news_list: this.state.news_list ? this.state.news_list.concat(news) : news
                 })
             });
-        */
     }
 
     handleScroll() {
